@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,26 @@
 
 <h1>FREE PALESTINE</h1>
 
-<h2>Peace • Justice • Freedom</h2>
+<h2>Peace - Justice - Freedom</h2>
 
 <p>
 We hope for peace, justice, freedom, safety, and human dignity for everyone.
 </p>
+
+<hr>
+
+{% if user.is_authenticated %}
+
+<p>Welcome, {{ user.username }}!</p>
+<a href="/users/logout/">Logout</a>
+
+{% else %}
+
+<a href="/users/login/">Login</a>
+&nbsp;&nbsp;
+<a href="/users/register/">Register</a>
+
+{% endif %}
 
 </body>
 </html>
